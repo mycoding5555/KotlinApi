@@ -1,0 +1,55 @@
+### Get all attendances
+GET http://localhost:8080/api/attendances
+
+### Get attendance by ID
+GET http://localhost:8080/api/attendances/1
+
+### Create new attendance
+POST http://localhost:8080/api/attendances
+Content-Type: application/json
+
+{
+  "userId": 1,
+  "date": "2025-08-18",
+  "status": "present"
+}
+
+### Update attendance by ID
+PUT http://localhost:8080/api/attendances/1
+Content-Type: application/json
+
+{
+  "userId": 1,
+  "date": "2025-08-18",
+  "status": "absent"
+}
+
+### Delete attendance by ID
+DELETE http://localhost:8080/api/attendances/1
+
+### Get all users
+GET http://localhost:8080/users
+
+### Get user by ID
+GET http://localhost:8080/users/1
+
+### Create new user
+POST http://localhost:8080/users
+Content-Type: application/json
+
+{
+  "name": "John Doe",
+  "email": "john@example.com"
+}
+
+### Update user by ID
+PUT http://localhost:8080/users/1
+Content-Type: application/json
+
+{
+  "name": "Jane Doe",
+  "email": "jane@example.com"
+}
+
+### Delete user by ID
+DELETE http://localhost:8080/users/1
