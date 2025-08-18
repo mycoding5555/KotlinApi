@@ -1,5 +1,7 @@
 package com.KotlinApi.KotlinApi.model
 
+
+import com.KotlinApi.KotlinApi.model.User
 import jakarta.persistence.*
 import java.time.LocalDateTime
 
@@ -10,8 +12,9 @@ data class Attendance(
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     val id: Long = 0,
 
-    @Column(nullable = false)
-    val userId: Long,
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "user_id", nullable = false)
+    val user: User,
 
     @Column(nullable = false)
     val checkInTime: LocalDateTime,

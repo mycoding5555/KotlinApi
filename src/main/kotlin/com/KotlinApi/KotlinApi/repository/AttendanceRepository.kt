@@ -6,4 +6,3 @@ import org.springframework.stereotype.Repository
 
 @Repository
 interface AttendanceRepository : JpaRepository<Attendance, Long>
-
