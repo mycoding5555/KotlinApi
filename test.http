@@ -9,7 +9,7 @@ POST http://localhost:8080/api/attendances
 Content-Type: application/json
 
 {
-  "userId": 4,
+  "userId": 2,
   "date": "2025-08-18",
   "status": "present"
 }
@@ -25,7 +25,7 @@ Content-Type: application/json
 }
 
 ### Delete attendance by ID
-DELETE http://localhost:8080/api/attendances/3
+DELETE http://localhost:8080/api/attendances/4
 
 ### Get all users
 GET http://localhost:8080/users

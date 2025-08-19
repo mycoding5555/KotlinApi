@@ -14,6 +14,7 @@ data class Attendance(
 
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "user_id", nullable = false)
+    @com.fasterxml.jackson.annotation.JsonBackReference
     val user: User,
 
     @Column(nullable = false)

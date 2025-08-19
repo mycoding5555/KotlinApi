@@ -19,5 +19,6 @@ data class User(
 	val email: String,
 
 	@OneToMany(mappedBy = "user", cascade = [CascadeType.ALL], fetch = FetchType.LAZY)
+	@com.fasterxml.jackson.annotation.JsonManagedReference
 	val attendances: List<Attendance> = emptyList()
 )

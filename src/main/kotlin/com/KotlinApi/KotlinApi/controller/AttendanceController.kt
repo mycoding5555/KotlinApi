@@ -31,7 +31,7 @@ class AttendanceController(private val attendanceRepository: AttendanceRepositor
         val existing = attendanceRepository.findById(id).orElse(null)
         return if (existing != null) {
             val updatedAttendance = existing.copy(
-                userId = updated.userId,
+                user = updated.user,
                 checkInTime = updated.checkInTime,
                 checkOutTime = updated.checkOutTime
             )
