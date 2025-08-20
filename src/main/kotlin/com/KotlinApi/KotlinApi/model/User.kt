@@ -1,8 +1,9 @@
 package com.KotlinApi.KotlinApi.model
 
-import jakarta.persistence.*
 
+import jakarta.persistence.*
 import com.KotlinApi.KotlinApi.model.Attendance
+import com.KotlinApi.KotlinApi.model.Student
 
 @Entity
 @Table(name = "users")
@@ -20,5 +21,9 @@ data class User(
 
 	@OneToMany(mappedBy = "user", cascade = [CascadeType.ALL], fetch = FetchType.LAZY)
 	@com.fasterxml.jackson.annotation.JsonManagedReference
-	val attendances: List<Attendance> = emptyList()
+	val attendances: List<Attendance> = emptyList(),
+
+	@OneToMany(mappedBy = "student", cascade = [CascadeType.ALL], fetch = FetchType.LAZY)
+	@com.fasterxml.jackson.annotation.JsonManagedReference
+	val students: List<Student> = emptyList()
 )

@@ -17,6 +17,11 @@ data class Attendance(
     @com.fasterxml.jackson.annotation.JsonBackReference
     val user: User,
 
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "student_id", nullable = false)
+    @com.fasterxml.jackson.annotation.JsonBackReference
+    val student: Student,
+
     @Column(nullable = false)
     val checkInTime: LocalDateTime,
 

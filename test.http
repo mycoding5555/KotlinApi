@@ -2,7 +2,7 @@
 GET http://localhost:8080/users
 
 ### Get user by ID
-GET http://localhost:8080/users/1
+GET http://localhost:8080/users/2
 
 
 ### Create new user
@@ -32,7 +32,7 @@ DELETE http://localhost:8080/users/3
 
 
 ### Get all attendances
-GET http://localhost:8080/api/attendances
+GET http://localhost:8080/api/attendances  
 
 ### Get attendance by ID
 GET http://localhost:8080/api/attendances/1
@@ -42,7 +42,7 @@ POST http://localhost:8080/api/attendances
 Content-Type: application/json
 
 {
-  "userId": 1,
+  "userId": 2,
   "checkInTime": "2025-08-19T09:00:00"
 }
 
@@ -60,3 +60,18 @@ Content-Type: application/json
 DELETE http://localhost:8080/api/attendances/4
 
 
+### GET all student
+GET http://localhost:8080/api/students
+
+### Get student by ID
+GET http://localhost:8080/api/students/1
+
+## Create new student
+POST http://localhost:8080/api/students
+Content-Type: application/json
+
+{
+  "name": "John Doe",
+  "age": 20,
+  "studentClass": "10th Grade"
+}

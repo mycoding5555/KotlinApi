@@ -1,6 +1,7 @@
 package com.KotlinApi.KotlinApi.controller
 
 import com.KotlinApi.KotlinApi.model.Attendance
+// Update the import path below if AttendanceService is in a different package
 import com.KotlinApi.KotlinApi.service.AttendanceService
 import org.springframework.http.ResponseEntity
 import org.springframework.web.bind.annotation.*
