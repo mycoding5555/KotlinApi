@@ -4,6 +4,7 @@ import com.KotlinApi.KotlinApi.model.Student
 import com.KotlinApi.KotlinApi.service.StudentService
 import com.KotlinApi.KotlinApi.dto.StudentWithAttendanceDTO
 import com.KotlinApi.KotlinApi.dto.AttendanceDTO
+import com.KotlinApi.KotlinApi.model.Attendance
 import org.springframework.beans.factory.annotation.Autowired
 import org.springframework.http.ResponseEntity
 import org.springframework.web.bind.annotation.*
@@ -24,7 +25,7 @@ class StudentController {
                 name = student.name,
                 age = student.age,
                 studentClass = student.studentClass,
-                attendances = student.subjects.map { attendance: /* Specify the correct type here, e.g., Attendance */ ->
+                attendances = student.subjects.map { attendance: Attendance ->
                     AttendanceDTO(
                         id = attendance.id,
                         checkInTime = attendance.checkInTime.toString(),
