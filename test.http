@@ -1,22 +1,25 @@
 ### Get all users
-GET http://localhost:8080/users
+GET http://localhost:8080/api/users
 
 ### Get user by ID
-GET http://localhost:8080/users/2
+GET http://localhost:8080/api/users/2
+
 
 
 ### Create new user
-POST http://localhost:8080/users
+POST http://localhost:8080/api/users
 Content-Type: application/json
+Accept: application/json
 
 {
-  "name": "John Doe",
-  "email": "john@example.com",
-  "password": "Password123"
+  "name": "Test User",
+  "email": "testuser@example.com",
+  "password": "password123"
 }
 
+
 ### Update user by ID
-PUT http://localhost:8080/users/1
+PUT http://localhost:8080/api/users/1
 Content-Type: application/json
 
 {
@@ -24,8 +27,9 @@ Content-Type: application/json
   "email": "jane@example.com"
 }
 
+
 ### Delete user by ID
-DELETE http://localhost:8080/users/3
+DELETE http://localhost:8080/api/users/2
 
 
 
@@ -35,25 +39,28 @@ DELETE http://localhost:8080/users/3
 GET http://localhost:8080/api/attendances  
 
 ### Get attendance by ID
-GET http://localhost:8080/api/attendances/1
+GET http://localhost:8080/api/attendances/115
 
-### Create new attendance (Pedding)
+### Create new attendance (Pending)
 POST http://localhost:8080/api/attendances
 Content-Type: application/json
 
 {
   "userId": 2,
+  "studentId": 1,
   "checkInTime": "2025-08-19T09:00:00"
+
 }
 
-### Update attendance by ID (Pedding)
+### Update attendance by ID (Pending)
 PUT http://localhost:8080/api/attendances/1
 Content-Type: application/json
 
 {
   "userId": 1,
-  "date": "2025-08-18",
-  "status": "absent"
+  "studentId": 1,
+  "checkInTime": "2025-08-18T08:00:00",
+  "checkOutTime": "2025-08-18T17:00:00"
 }
 
 ### Delete attendance by ID
@@ -71,7 +78,9 @@ POST http://localhost:8080/api/students
 Content-Type: application/json
 
 {
+  "id": 2,
   "name": "John Doe",
   "age": 20,
-  "studentClass": "10th Grade"
+  "studentClass": "10th Grade",
+  "user": { "id": 1 }
 }

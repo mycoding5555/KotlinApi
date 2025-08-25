@@ -23,11 +23,11 @@ data class Student(
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "user_id", nullable = false)
     @com.fasterxml.jackson.annotation.JsonBackReference
-    val student: User,
+    val user: User,
 
     @OneToMany(mappedBy = "student", cascade = [CascadeType.ALL], fetch = FetchType.LAZY)
     @com.fasterxml.jackson.annotation.JsonManagedReference
-    val subjects: List<Attendance> = emptyList()
+    val attendances: List<Attendance> = emptyList()
 
    
 )

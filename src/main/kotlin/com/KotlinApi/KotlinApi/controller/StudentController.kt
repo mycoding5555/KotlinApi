@@ -25,7 +25,7 @@ class StudentController {
                 name = student.name,
                 age = student.age,
                 studentClass = student.studentClass,
-                attendances = student.subjects.map { attendance: Attendance ->
+                attendances = student.attendances.map { attendance: Attendance ->
                     AttendanceDTO(
                         id = attendance.id,
                         checkInTime = attendance.checkInTime.toString(),

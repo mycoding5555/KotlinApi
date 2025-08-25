@@ -2,16 +2,17 @@ package com.KotlinApi.KotlinApi.controller
 
 import com.KotlinApi.KotlinApi.model.User
 import com.KotlinApi.KotlinApi.service.UserService
+import com.KotlinApi.KotlinApi.dto.UserWithoutStudentsDTO
 import org.springframework.beans.factory.annotation.Autowired
 import org.springframework.web.bind.annotation.*
 
 @RestController
-@RequestMapping("/users")
+@RequestMapping("/api/users")
 class UserController @Autowired constructor(
     private val userService: UserService
 ) {
 
-    @PostMapping
+    @PostMapping(consumes = ["application/json", "application/json;charset=UTF-8"])
     fun createUser(@RequestBody user: User): User {
         return userService.createUser(user)
     }
@@ -24,8 +25,8 @@ class UserController @Autowired constructor(
 
 
     @GetMapping
-    fun getAllUsers(): List<User> {
-        return userService.getAllUsers()
+    fun getAllUsers(): List<UserWithoutStudentsDTO> {
+        return userService.getAllUsersWithoutStudents()
     }
 
 

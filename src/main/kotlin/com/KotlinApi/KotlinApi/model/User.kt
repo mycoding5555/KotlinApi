@@ -23,7 +23,7 @@ data class User(
 	@com.fasterxml.jackson.annotation.JsonManagedReference
 	val attendances: List<Attendance> = emptyList(),
 
-	@OneToMany(mappedBy = "student", cascade = [CascadeType.ALL], fetch = FetchType.LAZY)
-	@com.fasterxml.jackson.annotation.JsonManagedReference
+	@OneToMany(mappedBy = "user", cascade = [CascadeType.ALL], fetch = FetchType.LAZY)
+	@com.fasterxml.jackson.annotation.JsonIgnore
 	val students: List<Student> = emptyList()
 )
