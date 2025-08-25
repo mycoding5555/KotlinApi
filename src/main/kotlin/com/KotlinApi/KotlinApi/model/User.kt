@@ -19,6 +19,9 @@ data class User(
 	@Column(nullable = false, unique = true)
 	val email: String,
 
+	@Column(nullable = false)
+	val password: String,
+
 	@OneToMany(mappedBy = "user", cascade = [CascadeType.ALL], fetch = FetchType.LAZY)
 	@com.fasterxml.jackson.annotation.JsonManagedReference
 	val attendances: List<Attendance> = emptyList(),

@@ -1,15 +1,40 @@
-### Get all users
+# Example: Access protected endpoint with JWT
+
+# Register a new user
+POST http://localhost:8080/api/auth/register
+Content-Type: application/json
+
+{
+  "email": "testuser@example.com",
+  "password": "testpassword"
+}
+
+# Login with existing user
+POST http://localhost:8080/api/auth/login
+Content-Type: application/json
+
+{
+  "email": "testuser@example.com",
+  "password": "testpassword"
+}
+
+### Get all users (protected)
 GET http://localhost:8080/api/users
+Authorization: Bearer <your-jwt-token>
 
-### Get user by ID
+
+### Get user by ID (protected)
 GET http://localhost:8080/api/users/2
+Authorization: Bearer <your-jwt-token>
 
 
 
-### Create new user
+
+### Create new user (protected)
 POST http://localhost:8080/api/users
 Content-Type: application/json
 Accept: application/json
+Authorization: Bearer <your-jwt-token>
 
 {
   "name": "Test User",
