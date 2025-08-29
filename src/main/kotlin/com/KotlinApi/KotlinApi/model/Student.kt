@@ -17,7 +17,7 @@ data class Student(
     @Column(name = "age", nullable = false)
     val age: Int,
 
-    @Column(name = "class", nullable = false)
+    @Column(name = "class_name", nullable = false)
     val studentClass: String,
 
     @ManyToOne(fetch = FetchType.LAZY)
